@@ -1,0 +1,22 @@
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  display: inline-block;
+  height: 16px;
+  width: 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-value {
+  width: 60%;
+  height: 16px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}

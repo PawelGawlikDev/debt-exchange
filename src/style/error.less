@@ -1,0 +1,35 @@
+@import "./tableVars.less";
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #999;
+  }
+  button {
+    background-color: @primary-color;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: darken(@primary-color, 5%);
+    }
+
+    &:active {
+      background-color: @primary-color;
+    }
+  }
+}

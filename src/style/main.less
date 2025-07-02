@@ -1,0 +1,61 @@
+@import "./tableVars.less";
+@table-max-width: 95%;
+@header-padding: 40px;
+@searchbox-width: 400px;
+
+.table-container {
+  max-width: @table-max-width;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.layout-checkbox {
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: @primary-color;
+  padding: (@header-padding / 2) @header-padding (@header-padding / 2)
+    @header-padding;
+  @media (max-width: 768px) {
+    padding: (@header-padding / 2);
+  }
+}
+
+.header__search {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: @searchbox-width;
+  @media (max-width: 768px) {
+    width: (@searchbox-width - 170px);
+    gap: 10px;
+  }
+}
+
+.toggle_label,
+.label {
+  color: white;
+}
+
+.label {
+  font-weight: 800;
+}
+
+.spinner-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  justify-content: center;
+}

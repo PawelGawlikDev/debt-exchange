@@ -1,0 +1,64 @@
+@import "./tableVars.less";
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+  min-width: 1000px;
+
+  th {
+    background: #fff;
+    padding-bottom: calc(@padding-default / 2);
+    border-bottom: 1px solid @border-color;
+    font-weight: bold;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  td {
+    border-top: 1px solid @cell-border-color;
+    padding: @padding-default;
+  }
+
+  tbody {
+    tr {
+      text-align: center;
+    }
+    tr:first-child {
+      td {
+        border-top: none;
+      }
+    }
+
+    tr:nth-child(n) {
+      td {
+        background: @row-bg-odd;
+      }
+    }
+
+    tr:nth-child(2n) {
+      td {
+        background: @row-bg-even;
+      }
+    }
+  }
+}
+
+.hidden-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.cursor-click {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sticky-cell {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+  }
+}
