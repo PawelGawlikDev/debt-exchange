@@ -44,13 +44,35 @@ const TableCell = ({
     setIsActive((active) => !active);
   };
 
+  const displayData = () => {
+    if (tData instanceof Date) {
+      return getFormatedDate(tData);
+    } else if (typeof tData === "number") {
+      return tData.toLocaleString("pl-PL", {
+        useGrouping: true,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    } else {
+      return tData;
+    }
+  };
+
+  console.log(
+    (1000).toLocaleString("pl-PL", {
+      useGrouping: true,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
+  );
+
   return (
     <td
       data-testid={`${accessor}-cell`}
       onClick={handleDataClick}
-      className={`${accessor === "Name" && !isActive ? "hidden-text" : ""} ${accessor === "Name" ? "sticky-cell" : ""}`}
+      className={`${accessor === "Name" && !isActive ? "hidden-text cursor-click" : ""} ${accessor === "Name" ? "sticky-cell" : ""}`}
       key={accessor}>
-      {tData instanceof Date ? getFormatedDate(tData) : tData}
+      {displayData()}
     </td>
   );
 };

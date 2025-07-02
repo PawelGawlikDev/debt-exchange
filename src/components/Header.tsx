@@ -32,13 +32,18 @@ const Header = ({
         <SearchBox setTableData={setTableData} defaultDebts={defaultDebts} />
       </div>
       <div className="layout-checkbox" data-testid="layoutCheckbox">
-        <label htmlFor="mobileLayoutCheckbox" className="toggle_label">
-          {mobileLayout === "table" ? "Karty" : "Tabela"}
-        </label>
-        <Toggle
-          toggled={isMobileCheckboxChecked}
-          onToggle={() => setIsMobileCheckboxChecked(!isMobileCheckboxChecked)}
-        />
+        <span className="toggle_label">Wybierz widok</span>
+        <div className="">
+          <label htmlFor="mobileLayoutCheckbox" className="toggle_label">
+            {mobileLayout === "table" ? "Tabela" : "Karty"}
+          </label>
+          <Toggle
+            toggled={isMobileCheckboxChecked}
+            onToggle={() =>
+              setIsMobileCheckboxChecked(!isMobileCheckboxChecked)
+            }
+          />
+        </div>
       </div>
     </div>
   );
