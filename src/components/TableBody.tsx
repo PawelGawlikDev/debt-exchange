@@ -58,14 +58,6 @@ const TableCell = ({
     }
   };
 
-  console.log(
-    (1000).toLocaleString("pl-PL", {
-      useGrouping: true,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }),
-  );
-
   return (
     <td
       data-testid={`${accessor}-cell`}
